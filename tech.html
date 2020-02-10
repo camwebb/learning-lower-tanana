@@ -97,7 +97,7 @@
 <span id="cb2-7"><a href="#cb2-7"></a>  <span class="va">s</span>.<span class="at">setAttributeNode</span>(r)<span class="op">;</span></span>
 <span id="cb2-8"><a href="#cb2-8"></a>  <span class="va">a</span>.<span class="at">play</span>()<span class="op">;</span></span>
 <span id="cb2-9"><a href="#cb2-9"></a><span class="op">}</span></span></code></pre></div>
-<p>The I tried to do the same by setting <code>a.currentTime</code> for the start, but found there is no simple way to <code>a.play()</code> for a fixed duration. But the media’s <code>file#t=b,e</code> notation works.</p>
+<p>I tried to do the same by setting <code>a.currentTime</code> for the start, but found there is no simple way to <code>a.play()</code> for a fixed duration. But the media’s <code>file#t=b,e</code> notation works.</p>
 <p>Finally, linking to the sound clip in the page works best with</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;javascript:playSeg(&#39;file&#39;,b,e);&quot;</span><span class="kw">&gt;</span></span></code></pre></div>
 <p>Using</p>
@@ -110,6 +110,30 @@ b59a908dd1312ef353925aa829b28471  media/lt2a.mp3
 be0a863786048de5d44a6dfed73f1d73  media/lt2b.mp3</code></pre>
 <h2 id="webpage-making">Webpage making</h2>
 <p>These HTML pages are generated using <a href="https://pandoc.org/">Pandoc</a> on Markdown. See the <a href="https://github.com/camwebb/learning-lower-tanana">Github repo</a> for this project. Sound clips are written as <code>{file,start,end}</code> and a simple <code>sed</code> script converts this to the appropriate HTML.</p>
+<h2 id="sound-clips-aha">Sound clips, Aha!</h2>
+<p>I noticed that determining timings of segments in Audacity or elan and using these timing in the method above did not work. As the timings became longer the start times would be ‘off’. Also, the timings in Firefox and Chromium were different. This led to a search for the reason, and solution.</p>
+<h3 id="possible-reason-1">Possible reason 1</h3>
+<p>Perhaps the <code>&lt;audio&gt;</code> playing method was not as good as the comprehensive Web Audio API, which seems real ‘hi-fi’? I went down this road quite a long way, struggling through examples, and new Javascript constructs (‘arrow functions’). I finally got sounds to load. Here’s the minimal code (thanks to the many Web Audio API tutorials on the web):</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb6-1"><a href="#cb6-1"></a><span class="kw">const</span> xhr <span class="op">=</span> <span class="kw">new</span> <span class="at">XMLHttpRequest</span>()<span class="op">;</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="va">xhr</span>.<span class="at">open</span>(<span class="st">&quot;GET&quot;</span><span class="op">,</span> <span class="st">&quot;file1.mp3&quot;</span><span class="op">,</span> <span class="kw">true</span>)<span class="op">;</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="va">xhr</span>.<span class="at">responseType</span> <span class="op">=</span> <span class="st">&quot;arraybuffer&quot;</span><span class="op">;</span></span>
+<span id="cb6-4"><a href="#cb6-4"></a><span class="va">xhr</span>.<span class="at">onload</span> <span class="op">=</span> <span class="kw">function</span>() <span class="op">{</span></span>
+<span id="cb6-5"><a href="#cb6-5"></a>    <span class="kw">const</span> context <span class="op">=</span> <span class="kw">new</span> (<span class="va">window</span>.<span class="at">AudioContext</span> <span class="op">||</span> <span class="va">window</span>.<span class="at">webkitAudioContext</span>)()<span class="op">;</span></span>
+<span id="cb6-6"><a href="#cb6-6"></a>    <span class="va">context</span>.<span class="at">decodeAudioData</span>(<span class="va">xhr</span>.<span class="at">response</span><span class="op">,</span> <span class="kw">function</span>(buffer) <span class="op">{</span></span>
+<span id="cb6-7"><a href="#cb6-7"></a>        <span class="kw">const</span> source <span class="op">=</span> <span class="va">context</span>.<span class="at">createBufferSource</span>()<span class="op">;</span></span>
+<span id="cb6-8"><a href="#cb6-8"></a>        <span class="va">source</span>.<span class="at">buffer</span> <span class="op">=</span> buffer<span class="op">;</span></span>
+<span id="cb6-9"><a href="#cb6-9"></a>        <span class="va">source</span>.<span class="at">connect</span>(<span class="va">context</span>.<span class="at">destination</span>)<span class="op">;</span></span>
+<span id="cb6-10"><a href="#cb6-10"></a>        <span class="va">source</span>.<span class="at">start</span>(<span class="dv">0</span>)<span class="op">;</span></span>
+<span id="cb6-11"><a href="#cb6-11"></a>    <span class="op">}</span>)<span class="op">;</span></span>
+<span id="cb6-12"><a href="#cb6-12"></a><span class="op">};</span></span>
+<span id="cb6-13"><a href="#cb6-13"></a><span class="va">xhr</span>.<span class="at">send</span>()<span class="op">;</span></span></code></pre></div>
+<p>(I was also attracted to solving the challenge of delaying the appearence of ‘play’ buttons or links until the (large) files had loaded, after seeing <a href="https://github.com/mdn/webaudio-examples/blob/master/multi-track/">this</a>, but never quite solved the problem of passing audio buffer identifiers to other functions… maybe one day.)</p>
+<h3 id="possible-reason-2">Possible reason 2</h3>
+<p>As I was browsing, I came across this statement: “Due to browsers protecting against fingerprinting and timing attacks, timing precision under the hood can be reduced or rounded by modern browsers. This would mean source.start(offset) could never be 100% accurate or reliable in your case.” Oh dear. Perhaps the inaccuracy of seeking was not a bug but a feature. One would have to switch off <code>privacy.reduceTimerPrecision</code> in <code>about:config</code> for finding start times in large files to work properly. That would suck, and open a browser to attacks.</p>
+<p>In this case, finding sections in a large file would not be a good solution, and cutting up a large file into little segment files would be the best way (this would be easy with a script and something like <code>ffmpeg -i in.mp3 -ss 3 -t 1 out.ogg</code>).</p>
+<h3 id="possible-reason-3">Possible reason 3</h3>
+<p>Fortunately, I tried to do a seek in <code>mplayer</code> (<code>mplayer -ss 1307.07 media/lt1a.mp3</code>) and it failed. And I realized that “MP3 files are not inherently seekable. They don’t contain any timestamps.” (<a href="https://stackoverflow.com/a/53747530/563709">source</a>). Duh - all this trouble was due to using MP3 as the source. WAV files are too big to share usefully, but the Ogg Vorbis format is similar in sizer to MP3s and <a href="https://xiph.org/ogg/">has timestamps for seeking</a>.</p>
+<p>Replacing the MP3s with OGG files, permits the simple <code>&lt;audio&gt;</code> solution above to work, even across browsers and with long files.</p>
         </div>
         <div class="three columns" style="margin-top: 5%">
           <a class="button" style="width:100%"

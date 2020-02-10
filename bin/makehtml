@@ -5,8 +5,11 @@ cd /home/cam/public_html/learning-lower-tanana/md
 if [ $# -eq 1 ]
 then
     echo "  "${1/md/html}
-    sed -E 's/\{([^,][^,][^,])([^,]*),([0-9.]+),([0-9.]+)\}/<a href="javascript:playSeg(\x27\1\2\x27,\3,\4);"><img src="img\/\1.png" height="15"\/><\/a>/g' $1 | \
-    pandoc -t html -s -o ../${1/md/html} --template=template.html -
+    # sed -E 's/\{([^,][^,][^,])([^,]*),([0-9.]+),([0-9.]+)\}/
+    # <a href="javascript:playSeg(\x27\1\2\x27,\3,\4);">
+    # <img src="img\/\1.png" height="15"\/><\/a>/g' $1 |
+    gawk -f ../bin/timestamps.awk $1 | \
+        pandoc -t html -s -o ../${1/md/html} --template=template.html -
     # note!!! the $body$ in the template must not be preceded by spaces
     # or they will mess up the indenting of <pre> blocks
     # check
@@ -15,8 +18,8 @@ else
     for i in [A-Za-z0-9]*.md
     do
         echo "  "${i/md/html}
-        sed -E 's/\{([^,][^,][^,])([^,]*),([0-9.]+),([0-9.]+)\}/<a href="javascript:playSeg(\x27\1\2\x27,\3,\4);"><img src="img\/\1.png" height="15"\/><\/a>/g' $i | \
-        pandoc -t html -s -o ../${i/md/html} --template=template.html -
+        gawk -f ../bin/timestamps.awk $i | \
+            pandoc -t html -s -o ../${i/md/html} --template=template.html -
     done
 #    ../bin/checklinks
 fi
