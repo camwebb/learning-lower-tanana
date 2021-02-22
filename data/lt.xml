@@ -1,0 +1,153 @@
+<langsample>
+  <lang>
+    <origin>
+      <name>Lower Tanana</name>
+      <orth id="kh">
+        <knownas>Kh-</knownas>
+      </orth>
+      <orth id="x">
+        <knownas>X-</knownas>
+      </orth>
+      <orth id="me">
+        <notes>Cam Webb's transliteration</notes>
+      </orth>
+    </origin>
+    <destination>English</destination>
+  </lang>
+  <terms>
+    <!-- ANLC2540A.wav, ... were trimmed before timings were marked, so
+         no begin="" end="" timings are available for those original files -->
+    <term>
+      <o orth="kh">do’eent’a</o>
+      <o orth="me">da-eenta</o>
+      <d>how are you?</d>
+      <sound speaker="ef" file="dointa.mp3" orig="ANLC2540A.wav"/>
+      <sound speaker="ef" file="daeenta.mp3" orig="ANLC2540B.wav"/>
+    </term>
+    <term type="word">
+      <o orth="kh">eszroonh</o>
+      <o orth="x">eszrunh</o>
+      <d>I am fine</d>
+      <sound speaker="ef" file="eszroonh.mp3" orig="ANLC2540A.wav"/>
+      <sound speaker="ic" file="eszroonh2.mp3" orig="ANLC2546A.wav"/>
+    </term>
+    <term type="word">
+      <o orth="kh">eszrooną</o>
+      <o orth="x">eszruną</o>
+      <d>I am not fine</d>
+      <sound speaker="ef" file="eszroona.mp3" orig="ANLC2540A.wav"/>
+    </term>
+    <term type="word">
+      <o orth="kh">neszroonh</o>
+      <o orth="me">neszoonh</o>
+      <d>he is fine</d>
+      <sound speaker="ef" file="neszroonh.mp3" orig="ANLC2540A.wav"/>
+    </term>
+    <term type="word">
+      <o orth="foo"/><d/>
+      <sound speaker="ef" file="edlee.mp3" orig="ANLC2540A.wav"/>
+    </term>
+    <term type="word">
+      <o orth="foo"/><d/>
+      <sound speaker="ef" file="looka.mp3" orig="ANLC2540A.wav"/>
+    </term>
+    <term type="word">
+      <o orth="foo"/><d/>
+      <sound speaker="ef" file="tsabaya.mp3" orig="ANLC2540A.wav"/>
+    </term>
+    <term type="word">
+      <o orth="foo"/><d/>
+      <sound speaker="ef" file="gath.mp3" orig="ANLC2540A.wav"/>
+    </term>
+    <term type="word">
+      <o orth="foo"/><d/>
+      <sound speaker="ef" file="jega.mp3" orig="ANLC2540A.wav"/>
+    </term>
+    <term type="word">
+      <o orth="foo"/><d/>
+      <sound speaker="ef" file="neetlet.mp3" orig="ANLC2540A.wav"/>
+    </term>
+    <term type="word">
+      <o orth="foo"/><d/>
+      <sound speaker="ef" file="tronelttha.mp3" orig="ANLC2540A.wav"/>
+    </term>
+    <term type="word">
+      <o orth="kh">ts'eba</o>
+      <o orth="x">ts'eba</o>
+      <o orth="me">ts’ba</o>
+      <d>spruce</d>
+      <sound speaker="ef" file="tseba.mp3" orig="ANLC2540A.wav"/>
+      <sound speaker="ic" file="tseba2.mp3" orig="ANLC2546A.wav"/>
+    </term>
+    <term type="word">
+      <o orth="kh">k’eeyh</o>
+      <o orth="x">k’iyh</o>
+      <d>birch</d> 
+      <sound speaker="ef" file="keeyh.mp3" orig="ANLC2540A.wav"/>
+      <sound speaker="ic" file="keeyh2.mp3" orig="ANLC2546B.wav"/>
+    </term>
+    <term type="word">
+      <o orth="foo"/><d/>
+      <sound speaker="ef" file="nejethtokh.mp3" orig="ANLC2540A.wav"/>
+    </term>
+    <term type="word">
+      <o orth="foo"/><d/>
+      <sound speaker="ef" file="nolto_leanh.mp3" orig="ANLC2540A.wav"/>
+    </term>
+    <term type="word">
+      <o orth="x">eba esdlanh</o>
+      <d>I am sick</d>
+      <sound speaker="ef" file="eba_esdlanh.mp3" orig="ANLC2540B.wav"/>
+    </term>
+    <term type="word">
+      <o orth="x">sugut eba</o>
+      <d>my knee hurts</d>
+      <sound speaker="ef" file="sugut_eba.mp3" orig="ANLC2540B.wav"/>
+    </term>
+    <term type="word">
+      <o orth="foo"/><d/>
+      <sound speaker="ic" file="basee.mp3" orig="ANLC2546A.wav"/>
+    </term>
+    <term>
+      <o orth="x">ch’es’oł</o>
+      <d>I am eating</d>
+    </term>
+    <term>
+      <o orth="x">ch’edhes’olą</o>
+      <d>I am not eating</d>
+    </term>
+    <term>
+      <o orth="x">ch’i’oł</o>
+      <d>you (sing.) are eating</d>
+    </term>
+    <term>
+      <o orth="x">ch’edhi’olą</o>
+      <d>you (sing.) are not eating</d>
+    </term>
+    <term type="word">
+      <o orth="x">ch’e’oł</o>
+      <o orth="me">che’oł</o>
+      <d>he is eating</d> 
+      <sound speaker="ic" file="cheol.mp3" orig="ANLC2546A.wav"/>
+    </term>
+    <term>
+      <o orth="x">ch’eth’olą</o>
+      <d>he is not eating</d>
+    </term>
+    <term type="word">
+      <o orth="kh">k’uy’</o>
+      <o orth="x">k’wy’</o>
+      <d>willow</d>
+      <sound speaker="ic" file="kuy.mp3" orig="ANLC2546B.wav"/>
+    </term>
+  </terms>
+  <speakers>
+    <speaker id="ef">
+      <name>Ellen Frank</name>
+    </speaker>
+    <speaker id="ic">
+      <name>Isabel Charlie</name>
+    </speaker>
+  </speakers>
+</langsample>
+

@@ -2,9 +2,9 @@ BEGIN{
   inputs = "lt1a|lt1b|lt2a|lt2b"
   split(inputs,input,"|")
   for (i in input)
-    while ((getline < ("../media/" input[i] ".lab.txt")) > 0) {
+    while ((getline < ("../media/" input[i] ".txt")) > 0) {
       if (++w[$3]>1)
-        print "Error: label " $3 " in file ../media/" input[i] ".lab.txt" \
+        print "Error: label " $3 " in file ../media/" input[i] ".txt" \
           " is a duplicate" > "/dev/stderr"
       t["\\{" $3 "\\}"] =                                  \
         "<a href=\"javascript:playSeg('" input[i] "'," sprintf("%.2f", $1) \

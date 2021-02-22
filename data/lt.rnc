@@ -1,0 +1,38 @@
+default namespace = ""
+
+start =
+   element langsample {
+      element lang {
+         element origin {
+            element name { text },
+            element orth {
+               attribute id { xsd:NCName },
+               element knownas { text }?,
+               element notes { text }?
+            }+
+         },
+         element destination { text }
+      },
+      element terms {
+         element term {
+            attribute type { xsd:NCName }?,
+            element o {
+               attribute orth { xsd:NCName },
+               text
+            }+,
+            element d { text },
+            element sound {
+               attribute file { xsd:NCName },
+               attribute orig { xsd:NCName },
+               attribute speaker { xsd:NCName }
+            }*
+         }+
+      },
+      element speakers {
+         element speaker {
+            attribute id { xsd:NCName },
+            element name { text }
+         }*
+      }
+   }
+
