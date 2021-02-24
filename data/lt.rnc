@@ -1,38 +1,59 @@
 default namespace = ""
 
 start =
-   element langsample {
+   element langsamples {
       element lang {
          element origin {
-            element name { text },
+            element name { text } &
             element orth {
-               attribute id { xsd:NCName },
-               element knownas { text }?,
+               attribute id { xsd:NCName } &
+               element knownas { text }? &
                element notes { text }?
             }+
-         },
+         } &
          element destination { text }
-      },
+      } &
       element terms {
          element term {
-            attribute type { xsd:NCName }?,
+            attribute type { xsd:NCName }? &
+            element key { xsd:NCName }* &
             element o {
-               attribute orth { xsd:NCName },
+               attribute orth { xsd:NCName }? &
+               attribute src { xsd:NCName }? &
                text
-            }+,
-            element d { text },
+            }+ &
+            element alt { text }* &
+            element d {
+               attribute src { xsd:NCName }? &
+               text }+ &
             element sound {
-               attribute file { xsd:NCName },
-               attribute orig { xsd:NCName },
-               attribute speaker { xsd:NCName }
-            }*
+               attribute file { xsd:NCName } &
+               attribute orig { xsd:NCName }? &
+               attribute src { text }? &
+               attribute speaker { xsd:NCName }? &
+               (
+                  attribute conv { xsd:integer } &
+                  attribute part { xsd:integer }
+               )?
+            }* &
+            element notes { text }?
          }+
-      },
+      } &
       element speakers {
          element speaker {
-            attribute id { xsd:NCName },
+            attribute id { xsd:NCName } &
             element name { text }
-         }*
-      }
+         }+
+      }? &
+      element culturenotes {
+         element note { text }+
+      }? &
+      element sources {
+         element source {
+            attribute id { xsd:NCName } ,
+            attribute orth { xsd:NCName }? ,
+            text
+         }+
+      }?
    }
 

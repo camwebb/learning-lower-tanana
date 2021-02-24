@@ -1,4 +1,5 @@
-<langsample>
+<langsamples>
+  <!-- After change to RNC validate with M-x rng-auto-set-schema -->
   <lang>
     <origin>
       <name>Lower Tanana</name>
@@ -9,138 +10,435 @@
         <knownas>X-</knownas>
       </orth>
       <orth id="me">
-        <notes>Cam Webb's transliteration</notes>
+        <notes>Cam Webb’s transliteration</notes>
       </orth>
     </origin>
     <destination>English</destination>
   </lang>
+  
   <terms>
     <!-- ANLC2540A.wav, ... were trimmed before timings were marked, so
          no begin="" end="" timings are available for those original files -->
+    <!-- to play a conversation:
+           for i in TAAus_ENGus_*.mp3; do mpg123 $i ; sleep 1; done -->
     <term>
-      <o orth="kh">do’eent’a</o>
-      <o orth="me">da-eenta</o>
+      <key>greeting</key>
+      <o orth="x">do’int’a?</o>
+      <o orth="kh">do’eent’a?</o>
+      <o orth="cw">da-eenta?</o>
+      <alt>do'it'a?</alt>
       <d>how are you?</d>
-      <sound speaker="ef" file="dointa.mp3" orig="ANLC2540A.wav"/>
-      <sound speaker="ef" file="daeenta.mp3" orig="ANLC2540B.wav"/>
+      <sound speaker="ef" file="dointa.mp3" orig="ANLC2540A.wav"
+             src="kari1998low"/>
+      <sound speaker="ef" file="daeenta.mp3" orig="ANLC2540B.wav"
+             src="kari1998low"/>
+      <sound speaker="di" src="doyon2021con" file="doy-01-02-02.mp3"
+             conv="1" part="3"/>
+      <sound speaker="bt" file="doy-01-03-09.mp3" src="doyon2021con"
+             conv="2" part="1"/>
+      <notes>Kari 2021: do'it'a? From t'a = be thus and do =
+      interogative</notes>
     </term>
+    
     <term type="word">
-      <o orth="kh">eszroonh</o>
+      <key>greeting</key>
+      <key>good</key>
       <o orth="x">eszrunh</o>
+      <o orth="kh">eszroonh</o>
       <d>I am fine</d>
       <sound speaker="ef" file="eszroonh.mp3" orig="ANLC2540A.wav"/>
       <sound speaker="ic" file="eszroonh2.mp3" orig="ANLC2546A.wav"/>
+      <sound speaker="bt" src="doyon2021con" file="doy-01-02-03.mp3"
+        conv="1" part="4"/>
     </term>
+
+    <term>
+      <key>greeting</key>
+      <key>also</key>
+      <o orth="x">si chuk’w, eszrunh</o>
+      <d>me too, I am fine</d>
+      <notes>Kari 2021: chuk’w = too, either, also</notes>
+      <sound speaker="di" src="doyon2021con" file="doy-01-02-04.mp3"
+             conv="1" part="5"/>
+    </term>
+
     <term type="word">
-      <o orth="kh">eszrooną</o>
+      <key>greeting</key>
+      <key>good</key>
       <o orth="x">eszruną</o>
+      <o orth="kh">eszrooną</o>
       <d>I am not fine</d>
       <sound speaker="ef" file="eszroona.mp3" orig="ANLC2540A.wav"/>
+      <notes>Kari 2021: 1s negative: dheszru'ą́</notes>
     </term>
+    
     <term type="word">
+      <key>greeting</key>
       <o orth="kh">neszroonh</o>
-      <o orth="me">neszoonh</o>
+      <o orth="cw">neszoonh</o>
       <d>he is fine</d>
       <sound speaker="ef" file="neszroonh.mp3" orig="ANLC2540A.wav"/>
+      <notes>Kari 2021: baba nezrunh = the food is good</notes>
     </term>
+
+    <term>
+      <o src="doyon2021con">khuzrunh ts'e kheniyayh</o>
+      <d src="doyon2021con">you speak well</d>
+    </term>
+
+    <term>
+      <o src="doyon2021con">khuzrunh ts'e edek’onaniłtoyh</o>
+      <d src="doyon2021con">take care of yourself</d>
+    </term>
+
+    <term>
+      <key>also</key>
+      <o src="doyon2021con">nenh chuk'w</o>
+      <d src="doyon2021con">you too</d>
+    </term>
+
+    <term>
+      <key>thanks</key>
+      <o src="doyon2021con">ena basi’</o>
+      <d src="doyon2021con">thank you very much</d>
+    </term>
+
+    <term>
+      <key>yes</key>
+      <o src="doyon2021con">ehę’</o>
+      <d src="doyon2021con">yes</d>
+    </term>
+    
+    <term>
+      <key>good</key>
+      <key>speak</key>
+      <o src="doyon2021con">khuzrunh ts'e kheniyayh</o>
+      <d src="doyon2021con">you speak well</d>
+    </term>
+
     <term type="word">
-      <o orth="foo"/><d/>
+      <key>cold</key>
+      <key>weather</key>
+      <o src="kari1998low">edlee</o>
+      <d src="kari1998low">it's cold</d>
       <sound speaker="ef" file="edlee.mp3" orig="ANLC2540A.wav"/>
     </term>
+    
     <term type="word">
-      <o orth="foo"/><d/>
+      <key>fish</key>
+      <o src="kari1998low">looka</o>
+      <d src="kari1998low">fish</d>
       <sound speaker="ef" file="looka.mp3" orig="ANLC2540A.wav"/>
     </term>
+
     <term type="word">
-      <o orth="foo"/><d/>
+      <key>fish</key>
+      <o src="kari1998low">tsabaya</o>
+      <d src="kari1998low">whitefish</d>
       <sound speaker="ef" file="tsabaya.mp3" orig="ANLC2540A.wav"/>
     </term>
+
     <term type="word">
-      <o orth="foo"/><d/>
+      <key>fish</key>
+      <o src="kari1998low">gath</o>
+      <d src="kari1998low">king salmon</d>
       <sound speaker="ef" file="gath.mp3" orig="ANLC2540A.wav"/>
     </term>
+
     <term type="word">
-      <o orth="foo"/><d/>
+      <key>berry</key>
+      <o src="kari1998low">jega</o>
+      <d src="kari1998low">berry</d>
       <sound speaker="ef" file="jega.mp3" orig="ANLC2540A.wav"/>
     </term>
+
     <term type="word">
-      <o orth="foo"/><d/>
+      <key>berry</key>
+      <o src="kari1998low">neet'let</o>
+      <d src="kari1998low">lowbush cranberry</d>
       <sound speaker="ef" file="neetlet.mp3" orig="ANLC2540A.wav"/>
     </term>
+
     <term type="word">
-      <o orth="foo"/><d/>
+      <key>berry</key>
+      <o src="kari1998low">tronełttha</o>
+      <d src="kari1998low">highbush cranberry</d>
       <sound speaker="ef" file="tronelttha.mp3" orig="ANLC2540A.wav"/>
     </term>
+
     <term type="word">
-      <o orth="kh">ts'eba</o>
-      <o orth="x">ts'eba</o>
-      <o orth="me">ts’ba</o>
-      <d>spruce</d>
+      <key>tree</key>
+      <o src="kari1998low">ts’eba</o>
+      <o orth="x">ts’eba</o>
+      <o orth="cw">ts’ba</o>
+      <d src="kari1998low">tree</d>
+      <d src="kari1998low">spruce</d>
       <sound speaker="ef" file="tseba.mp3" orig="ANLC2540A.wav"/>
       <sound speaker="ic" file="tseba2.mp3" orig="ANLC2546A.wav"/>
     </term>
+
     <term type="word">
-      <o orth="kh">k’eeyh</o>
-      <o orth="x">k’iyh</o>
-      <d>birch</d> 
+      <key>tree</key>
+      <o src="kari1998low">k’eeyh</o>
+      <o src="kari1991low">k’iyh</o>
+      <d src="kari1998low">birch</d> 
       <sound speaker="ef" file="keeyh.mp3" orig="ANLC2540A.wav"/>
       <sound speaker="ic" file="keeyh2.mp3" orig="ANLC2546B.wav"/>
     </term>
+
     <term type="word">
-      <o orth="foo"/><d/>
+      <key>fishing</key>
+      <o src="kari1998low">nejetht’okh</o>
+      <d src="kari1998low">fishing</d> 
       <sound speaker="ef" file="nejethtokh.mp3" orig="ANLC2540A.wav"/>
     </term>
+    
     <term type="word">
+      <key>hunting</key>
+      <o src="kari1998low">nołto’ le’anh</o>
+      <d src="kari1998low">going hunting</d> 
       <o orth="foo"/><d/>
       <sound speaker="ef" file="nolto_leanh.mp3" orig="ANLC2540A.wav"/>
     </term>
+
     <term type="word">
-      <o orth="x">eba esdlanh</o>
-      <d>I am sick</d>
+      <key>sick</key>
+      <o src="kari1998low">eba esdlanh</o>
+      <d src="kari1998low">I am sick</d>
       <sound speaker="ef" file="eba_esdlanh.mp3" orig="ANLC2540B.wav"/>
     </term>
+
     <term type="word">
-      <o orth="x">sugut eba</o>
-      <d>my knee hurts</d>
+      <key>sick</key>
+      <o src="kari1998low">sugut eba</o>
+      <d src="kari1998low">my knee hurts</d>
       <sound speaker="ef" file="sugut_eba.mp3" orig="ANLC2540B.wav"/>
     </term>
+    
     <term type="word">
-      <o orth="foo"/><d/>
+      <key>thanks</key>
+      <o src="kari1991low">basi’</o>
+      <d src="kari1991low">thank you</d> 
       <sound speaker="ic" file="basee.mp3" orig="ANLC2546A.wav"/>
     </term>
+    
     <term>
+      <key>eat</key>
       <o orth="x">ch’es’oł</o>
       <d>I am eating</d>
     </term>
+
     <term>
+      <key>eat</key>
       <o orth="x">ch’edhes’olą</o>
       <d>I am not eating</d>
     </term>
     <term>
+      <key>eat</key>
       <o orth="x">ch’i’oł</o>
       <d>you (sing.) are eating</d>
     </term>
     <term>
+      <key>eat</key>
       <o orth="x">ch’edhi’olą</o>
       <d>you (sing.) are not eating</d>
     </term>
+    
     <term type="word">
+      <key>eat</key>
       <o orth="x">ch’e’oł</o>
-      <o orth="me">che’oł</o>
-      <d>he is eating</d> 
+      <o orth="cw">che’oł</o>
+      <d>he is eating</d>
       <sound speaker="ic" file="cheol.mp3" orig="ANLC2546A.wav"/>
     </term>
+
     <term>
+      <key>eat</key>
       <o orth="x">ch’eth’olą</o>
       <d>he is not eating</d>
     </term>
+
     <term type="word">
+      <key>tree</key>
       <o orth="kh">k’uy’</o>
       <o orth="x">k’wy’</o>
       <d>willow</d>
       <sound speaker="ic" file="kuy.mp3" orig="ANLC2546B.wav"/>
     </term>
+
+    <term>
+      <key>name</key>
+      <o orth="x">nedats’e ne’uzra’?</o>
+      <d>what’s your name?</d>
+      <sound speaker="bt" src="doyon2021con" file="doy-01-02-05.mp3"
+             conv="1" part="6"/>
+    </term>
+
+    <term>
+      <key>name</key>
+      <o orth="x">se’uzra’ David, nedats’e ne’uzra?</o>
+      <d>my name is David, what’s your name?</d>
+      <sound speaker="di" src="doyon2021con" file="doy-01-02-06.mp3"
+             conv="1" part="7"/>
+    </term>
+
+    <term>
+      <key>name</key>
+      <o orth="x">se’uzra’ Bertina</o>
+      <d>my name is Bertina</d>
+      <sound speaker="bt" src="doyon2021con" file="doy-01-02-07.mp3"
+             conv="1" part="8"/>
+    </term>
+
+    <term>
+      <key>friend</key>
+      <o orth="x">gena’</o>
+      <d>friend</d>
+      <sound speaker="bt" src="doyon2021con" file="doy-01-02-01.mp3"
+             conv="1" part="2"/>
+      <notes>
+        Kari: "distinctive regional term on Tanana River, seems to be
+        reshaped from dena person
+      </notes>
+    </term>
+
+    <term>
+      <key>friend</key>
+      <o orth="x">segena’</o>
+      <d>my friend</d>
+      <sound speaker="di" src="doyon2021con" file="doy-01-02-00.mp3"
+             conv="1" part="1"/>
+      <notes>se- = of me/me</notes>
+    </term>
+
+    <term>
+      <key>greeting</key>
+      <key>good</key>
+      <o orth="x">eszrunh, inzruni’?</o>
+      <d>I am fine, are you fine?</d>
+      <sound speaker="vw" file="doy-01-03-10.mp3" src="doyon2021con"
+             conv="2" part="2"/>
+    </term>
+
+    <term>
+      <key>greeting</key>
+      <key>good</key>
+      <o orth="x">ehę’, eszrunh</o>
+      <d>yes, I am fine</d>
+      <sound speaker="bt" file="doy-01-03-11.mp3" src="doyon2021con"
+             conv="2" part="3"/>
+    </term>
+
+    <term>
+      <key>live_at</key>
+      <o orth="x">nedanh giga’ dhido?</o>
+      <d>where do you live?</d>
+      <sound speaker="bt" file="doy-01-03-12.mp3" src="doyon2021con"
+             conv="2" part="4"/>
+    </term>
+
+    <term>
+      <key>live_at</key>
+      <o orth="x">Menok’oget dhesdo</o>
+      <d>I live at New Minto</d>
+      <sound speaker="vw" file="doy-01-03-13.mp3" src="doyon2021con"
+             conv="2" part="5"/>
+    </term>
+
+    <term>
+      <key>be_from</key>
+      <o orth="x">neda khwt’ana inlanh?</o>
+      <d>where are you from?</d>
+      <sound speaker="bt" file="doy-01-03-14.mp3" src="doyon2021con"
+             conv="2" part="6"/>
+    </term>
+    
+    <term>
+      <key>be_from</key>
+      <o orth="x">Benhti khwt’ana eslanh; neda khwt’ana inlanh?</o>
+      <d>I am from Minto; where are you from?</d>
+      <sound speaker="vw" file="doy-01-03-15.mp3" src="doyon2021con"
+             conv="2" part="7"/>
+    </term>
+
+    <term>
+      <key>be_from</key>
+      <o orth="x">Benhti khwt’ana eslanh</o>
+      <d>I am from Minto</d>
+      <sound speaker="bt" file="doy-01-03-16.mp3" src="doyon2021con"
+             conv="2" part="8"/>
+    </term>
+
+    <term>
+      <key>father</key>
+      <key>family</key>
+      <o src="doyon2021con">deba neto’?</o>
+      <d src="doyon2021con">who is your father?</d>
+      <sound file="doy-01-04-2.mp3" src="doyon2021con"
+             conv="3" part="3"/>
+    </term>
+
+    <term>
+      <key>mother</key>
+      <key>name</key>
+      <o src="doyon2021con">sonh Sarah be’uzra’</o>
+      <d src="doyon2021con">my mom’s name is Sarah</d>
+      <sound file="doy-01-04-1.mp3" src="doyon2021con"
+             conv="3" part="2"/>
+    </term>
+
+    <term>
+      <key>be_from</key>
+      <o src="doyon2021con">Benhti khwt’ana hi’?</o>
+      <d src="doyon2021con">are you Minto people?</d>
+      <sound file="doy-01-04-4.mp3" src="doyon2021con"
+             conv="3" part="5"/>
+    </term>
+
+    <term>
+      <key>also</key>
+      <o src="doyon2021con">nenh chuk’w, basi’</o>
+      <d src="doyon2021con">you too, thank you</d>
+      <sound file="doy-01-04-7.mp3" src="doyon2021con"
+             conv="3" part="8"/>
+    </term>
+
+    <term>
+      <key>name</key>
+      <key>father</key>
+      <o src="doyon2021con">seto’ Berkman be’uzra’</o>
+      <d src="doyon2021con">my father’s name is Berkman</d>
+      <sound file="doy-01-04-3.mp3" src="doyon2021con"
+             conv="3" part="4"/>
+    </term>
+
+    <term>
+      <key>be_from</key>
+      <o src="doyon2021con">ehę’, Benhti khwt’ana tr’ilanh</o>
+      <d src="doyon2021con">yes, we are from the Minto people</d>
+      <sound file="doy-01-04-5.mp3" src="doyon2021con"
+             conv="3" part="6"/>
+    </term>
+
+    <term>
+      <key>name</key>
+      <key>mother</key>
+      <o src="doyon2021con">nedats’e nonh be’uzra’?</o>
+      <d src="doyon2021con">what is your mom’s name?</d>
+      <sound file="doy-01-04-0.mp3" src="doyon2021con"
+             conv="3" part="1"/>
+    </term>
+
+    <term>
+      <key>thanks</key>
+      <o src="doyon2021con">basi’, segena’</o>
+      <d src="doyon2021con">thank you, my friend</d>
+      <sound file="doy-01-04-6.mp3" src="doyon2021con"
+             conv="3" part="7"/>
+    </term>
+
   </terms>
+
   <speakers>
     <speaker id="ef">
       <name>Ellen Frank</name>
@@ -148,6 +446,66 @@
     <speaker id="ic">
       <name>Isabel Charlie</name>
     </speaker>
+    <speaker id="di">
+      <name>David Ingles (Doyon tapes)</name>
+    </speaker>
+    <speaker id="bt">
+      <name>Bertina Titus (Doyon tapes)</name>
+    </speaker>
+    <speaker id="vw">
+      <name>Vera Weiser (Doyon tapes)</name>
+    </speaker>
   </speakers>
-</langsample>
+  
+  <culturenotes>
+    <note>
+      When introducing oneself, be sure and say which village you are
+      from, which clan you are part of, who your parents are as well
+      as who your grandparents on both sides are. Make sure to put
+      your mother’s side first, as in our custom we follow the
+      maternal line of progression.
+
+      According to tradition, all members of a certain clan are
+      related. You are brother or sister to your clan members. This is
+      important to know.
+
+      The clan system is in place to keep family members from becoming
+      involved with one another in a romance. People are born into
+      their clan, which they get from the mother’s side of the family,
+      for “you get your mother’s blood in the womb.” Example: Distant
+      cousins who know that they are the same clan consider each other
+      siblings. Aunties and uncles are considered clan mothers and
+      fathers. Each member helps the others, gives younger members
+      guidance, and knows they will be taken care of.
+      
+      Doyon LT Unit 1, Lesson 3
+    </note>
+  </culturenotes>
+  <sources>
+    <source id="kari1998low" orth="kh">
+      Kari, J and J Ritter. 1998. Lower Tanana Athabaskan Language
+      Lessons. Yukon Native Language Center. Recording by Ellen Frank.
+    </source>
+    <source id="kari1991low" orth="x">
+      Kari, J. 1991. Lower Tanana Athabaskan Listening and Writing Exercises.
+      ANLC.  Recordings by Isabel Charlie, Evelyn Alexander, and Peter John.
+    </source>
+    <source id="doyon2021con">
+      Doyon Foundation. 2021. Conversational Benhti
+      Kenaga'. Transparent Language
+      app. https://education.transparent.com/doyon. Recordings by
+      David Ingels and Bertina Titus.
+    </source>
+  </sources>
+  
+</langsamples>
+
+<!--
+<term>
+      <o src="doyon2021con">\2</o>
+      <d src="doyon2021con">\1</d>
+      <sound bt="" file="doy-01-04-.mp3" src="doyon2021con"
+             conv="3" part=""/>
+    </term>
+-->
 

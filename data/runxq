@@ -1,0 +1,17 @@
+#!/bin/sh
+
+if [ ${@: -1} = "exec" ]
+then
+    sh <(xqilla -v x "$2" -i lt.xml $1)
+    # for line in $OUT
+elif [ $# -eq 1 ]
+then
+    xqilla -i lt.xml $1
+elif [ $# -eq 2 ]
+then
+    xqilla -v x "$2" -i lt.xml $1 
+fi
+
+
+
+
